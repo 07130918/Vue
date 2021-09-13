@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+</head>
+
+<body>
+    <script src="vue.js"></script>
+    <div id="app">
+        <p>{{message}}</p>
+        <p>{{3}}</p>
+        <p>{{ok ? 'Yes' : 'No'}}</p>
+        <p>{{ sayHi() }}</p>
+        <button v-on:click="reverseMessage">メッセージ反転</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'HelloWorld!',
+                number: 3,
+                feeling: 'greate',
+                ok: true,
+                
+            },
+            methods: {
+                reverseMessage: function () {
+                    this.message = this.message.split('').reverse().join('')
+                },
+                sayHi: function () {
+                    return this.feeling;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
