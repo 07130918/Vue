@@ -9,24 +9,36 @@
 </head>
 
 <body>
-    <script src="vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <div id="app">
         <p>{{message}}</p>
+        <button v-on:click="reverseMessage">メッセージ反転</button>
         <p>{{3}}</p>
         <p>{{ok ? 'Yes' : 'No'}}</p>
         <p>{{ sayHi() }}</p>
-        <button v-on:click="reverseMessage">メッセージ反転</button>
+        <p>{{ html }}</p>
+        <p v-html="html"></p>
+        <a :[attribute]="url">Google</a>
+        <a v-bind="twitterObject">Twitter</a>
     </div>
+
     <script>
         new Vue({
             el: '#app',
             data: {
                 message: 'HelloWorld!',
                 number: 3,
-                feeling: 'greate',
                 ok: true,
-                
+                feeling: 'greate',
+                html: '<h1>h1タグです<h1>',
+                attribute: 'href',
+                url: 'https://google.com',
+                twitterObject: {
+                    href: 'https://twitter.com',
+                    id: 31
+                }
             },
+            // methods内ではthisキーワードでdata内を参照できる
             methods: {
                 reverseMessage: function () {
                     this.message = this.message.split('').reverse().join('')
