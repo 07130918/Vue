@@ -21,6 +21,8 @@
 
         <!-- preventキーワードで属性が持つ本来の挙動を防ぐ -->
         <a v-on:click.prevent href="https://google.com">飛ばせない!!!!</a>
+        <!-- key修飾子 -->
+        <input type="text" v-on:keyup.space="myAlert">
     </div>
 
     <script>
@@ -44,7 +46,11 @@
                 // mousemove eventを止める
                 // noEvent: function() {
                 //     event.stopPropagation()
-                // }
+                // },
+                myAlert(){
+                    alert('アラート');
+                }
+
             }
         })
     </script>
