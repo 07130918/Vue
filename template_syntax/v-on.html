@@ -14,13 +14,17 @@
     <a href="../template_syntax/">親ディレクトリへ</a>
     <div id="app">
         <p>現在{{ number }}回クリックされています</p>
-        <button v-on:click="countUp">カウントアップ</button>
+        <button v-on:[event]="countUp">カウントアップ</button>
+        <button @[event]="countUp">カウントアップ</button>
+        <button @click="countUp">カウントアップ</button>
+    </div>
 
     <script>
         new Vue({
             el: '#app',
             data: {
                 number: 0,
+                event: 'click',
             },
             methods: {
                 countUp: function () {
