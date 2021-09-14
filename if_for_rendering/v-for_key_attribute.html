@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <a href="../../">vuejsディレクトリへ</a>
+    <a href="../if_for_rendering/">親ディレクトリへ</a>
+    <div id="app">
+        <ul>
+            <!-- <div v-for="fruit in fruits"> -->
+            <div v-for="fruit in fruits" :key="fruit">
+                <p>{{ fruit }}</p>
+                <input type="text">
+            </div>
+        </ul>
+        <button @click="remove">先頭を削除</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                fruits: ['りんご', 'バナナ', 'ぶどう']
+            },
+            methods: {
+                remove: function() {
+                    this.fruits.shift()
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
