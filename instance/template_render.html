@@ -17,6 +17,7 @@
     </div>
 
     <div id="app2"></div>
+    <div id="app3"></div>
 
     <script>
         new Vue({
@@ -27,13 +28,29 @@
             }
         })
 
+        // template
         new Vue({
             data: {
+                el: '#app2',
                 message: 'Come on!',
                 band: 'Man with a mission'
             },
             template: '<h1>{{ message }}</h1>'
-        }).$mount('#app2')
+        })
+
+        // render
+        new Vue({
+            el: '#app3',
+            data: {
+                message: 'Come on!',
+                band: 'Man with a mission'
+            },
+            // 仮想DOMを作る
+            render: function (createElement) {
+                console.log(createElement('h1', this.band));
+                return createElement('h1', this.band);
+            }
+        })
     </script>
 </body>
 
