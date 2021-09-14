@@ -20,8 +20,16 @@
 
     <script>
         new Vue({
+            el: '#app',
             data: {
                 message: 'こんにちは',
+                band: 'Man with a mission'
+            }
+        })
+
+        new Vue({
+            data: {
+                message: 'Come on!',
                 band: 'Man with a mission'
             },
             template: '<h1>{{ message }}</h1>'
