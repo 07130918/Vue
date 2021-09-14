@@ -13,23 +13,27 @@
     <a href="../../">vuejsディレクトリへ</a>
     <a href="../instance/">親ディレクトリへ</a>
     <div id="app">
-        <p>{{ message }}</p>
-        <p>{{ demention }}</p>
-        <button @click="message = 'ボタンから変更'">{{ message }}を変更</button>
-        <button @click="demention = 'ボタンから変更'">{{ demention }}を変更</button>
+        <p>$data: {{ showData }}</p>
     </div>
 
     <script>
+        var data = {
+            message: 'こんにちは',
+            band: 'Man with a mission'
+        }
+
         var vm = new Vue({
             el: '#app',
-            data: {
-                message: 'こんにちは'
+            data: data,
+            computed: {
+                showData: function () {
+                    return this.$data
+                }
             }
         })
-        vm.message = '変えました'
-        // あとから足したプロパティにはgetter,setterがないためボタンで変える事ができない
-        vm.demention = '3D'
+
         console.log(vm)
+        console.log(vm.$data)
     </script>
 </body>
 
