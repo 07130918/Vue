@@ -13,13 +13,24 @@
     <a href="../../">vuejsディレクトリへ</a>
     <a href="../template_syntax/">親ディレクトリへ</a>
     <div id="app">
-        <h1>hello</h1>
+        <h1 :class="classObject">hello</h1>
+        <button @click="isActive = !isActive">切り替え</button>
+        <!-- 配列でバインディング -->
+        <h1 :class="[{red: isActive}, bg]">hello</h1>
     </div>
     <script>
         new Vue({
             el: '#app',
             data: {
+                isActive: true,
+                bg: 'bg-blue'
             },
+            computed: {
+                classObject: function () {
+                    // jsにおいてkeyに-が含まれる場合クォートで囲う必要がある
+                    return { red: this.isActive, 'bg-blue': !this.isActive }
+                }
+            }
         })
     </script>
 </body>
