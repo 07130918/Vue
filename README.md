@@ -5,4 +5,4 @@
     - data, computed, methods, watch
 
 ### if_for_rendering
-    -
+    - v-for, v-if
