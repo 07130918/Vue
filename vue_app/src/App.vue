@@ -9,6 +9,7 @@
 <script>
 import LikeHeader from './LikeHeader.vue'
     export default {
+        // ローカル登録
         components: {
             // LikeHeader: LikeHeader
             // 短縮できる
