@@ -10,7 +10,15 @@
 <script>
     export default {
         // 親から渡ってきた属性(プロパティはコンポーネントに登録できるカスタム属性)
-        props: ['totalNumber'],
+        // プロパティに型などのバリデーションをかける事ができる(コメント例: 型のみのとき簡潔に書ける)
+        // props: ['totalNumber'],
+        // props: {'totalNumber': Number},
+        props: {
+            totalNumber: {
+                type: Number,
+                required: true
+            }
+        },
         computed: {
             halfNumber() {
                 return this.totalNumber / 2;
