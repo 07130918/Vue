@@ -9,7 +9,7 @@
 
 <script>
     export default {
-        // 親から渡ってきた属性
+        // 親から渡ってきた属性(プロパティはコンポーネントに登録できるカスタム属性)
         props: ['count'],
         methods: {
             increment() {
