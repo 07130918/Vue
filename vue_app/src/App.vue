@@ -5,8 +5,9 @@
         <h2>{{number}}</h2>
         <!-- このように親から子に渡す値を定義する -->
         <!-- 属性として渡してあげる -->
-        <LikeNumber :totalNumber='number'></LikeNumber>
-        <LikeNumber v-bind:total-number='number'></LikeNumber>
+        <!-- カスタムイベント名はケバブケースで -->
+        <LikeNumber :totalNumber="number" @my-click="incrementNumber"></LikeNumber>
+        <LikeNumber v-bind:total-number="number"></LikeNumber>
     </div>
 </template>
 
@@ -23,6 +24,12 @@ import LikeHeader from './components/LikeHeader.vue'
             // LikeHeader: LikeHeader
             // 短縮できる
             LikeHeader
+        },
+        methods: {
+            // valには$emitの第2引数が来る
+            incrementNumber(val) {
+                this.number = val;
+            }
         }
     }
 </script>
