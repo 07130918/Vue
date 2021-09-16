@@ -5,8 +5,8 @@
         <h2>{{number}}</h2>
         <!-- このように親から子に渡す値を定義する -->
         <!-- 属性として渡してあげる -->
-        <LikeNumber :count='number'></LikeNumber>
-        <LikeNumber v-bind:count='number'></LikeNumber>
+        <LikeNumber :totalNumber='number'></LikeNumber>
+        <LikeNumber v-bind:total-number='number'></LikeNumber>
     </div>
 </template>
 

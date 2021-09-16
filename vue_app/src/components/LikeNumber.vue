@@ -1,7 +1,7 @@
 <template>
 <!-- template内は必ず1つの要素をルートとしなければならない -->
     <div>
-        <p>いいね: {{ count / 2 }}</p>
+        <p>いいね: {{ totalNumber / 2 }}</p>
         <button @click="increment">+1</button>
     </div>
     <!-- <div></div>  <= これはエラー起こる -->
@@ -10,10 +10,10 @@
 <script>
     export default {
         // 親から渡ってきた属性(プロパティはコンポーネントに登録できるカスタム属性)
-        props: ['count'],
+        props: ['totalNumber'],
         methods: {
             increment() {
-                this.count++;
+                this.totalNumber++;
             }
         }
     }
