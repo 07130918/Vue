@@ -1,5 +1,5 @@
 <template>
-    <h1>いいねカウント</h1>
+    <h1>合計いいね数</h1>
 </template>
 
 <script>

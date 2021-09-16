@@ -1,10 +1,7 @@
 <template>
 <!-- template内は必ず1つの要素をルートとしなければならない -->
     <div>
-        <div>
-            こんにちは
-        </div>
-        <p>いいね: {{ number }}</p>
+        <p>いいね: {{ number / 2 }}</p>
         <button @click="increment">+1</button>
     </div>
     <!-- <div></div>  <= これはエラー起こる -->
@@ -12,11 +9,7 @@
 
 <script>
     export default {
-        data() {
-            return {
-                number: 5
-            };
-        },
+        props: ['number'],
         methods: {
             increment() {
                 this.number++;
