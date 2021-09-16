@@ -1,7 +1,7 @@
 <template>
 <!-- template内は必ず1つの要素をルートとしなければならない -->
     <div>
-        <p>いいね: {{ totalNumber / 2 }}</p>
+        <p>いいね: {{ halfNumber }}</p>
         <button @click="increment">+1</button>
     </div>
     <!-- <div></div>  <= これはエラー起こる -->
@@ -11,6 +11,11 @@
     export default {
         // 親から渡ってきた属性(プロパティはコンポーネントに登録できるカスタム属性)
         props: ['totalNumber'],
+        computed: {
+            halfNumber() {
+                return this.totalNumber / 2;
+            }
+        },
         methods: {
             increment() {
                 this.totalNumber++;
