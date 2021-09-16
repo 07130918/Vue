@@ -1,8 +1,10 @@
 <template>
-<!-- シングルファイルコンポーネントはtemplate, script, styleの３つに別れている -->
     <div>
-        <LikeHeader></LikeHeader>
-        <h2>{{number}}</h2>
+        <LikeHeader headerText="hello">
+            <!-- slotにLikeHeader内要素をぶちこめる -->
+            <h1>トータルの良いいね数</h1>
+            <h2>{{ number }}</h2>
+        </LikeHeader>
         <!-- このように親から子に渡す値を定義する -->
         <!-- 属性として渡してあげる -->
         <!-- カスタムイベント名はケバブケースで -->
@@ -21,8 +23,7 @@ import LikeHeader from './components/LikeHeader.vue'
         },
         // ローカル登録
         components: {
-            // LikeHeader: LikeHeader
-            // 短縮できる
+            // LikeHeader: LikeHeader 短縮できる
             LikeHeader
         },
         methods: {

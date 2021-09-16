@@ -4,7 +4,6 @@
         <p>いいね: {{ halfNumber }}</p>
         <button @click="increment">+1</button>
     </div>
-    <!-- <div></div>  <= これはエラー起こる -->
 </template>
 
 <script>

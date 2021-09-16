@@ -1,8 +1,14 @@
 <template>
-    <h1>合計いいね数</h1>
+    <div>
+        <slot></slot>
+        <p>{{ headerText }}</p>
+    </div>
 </template>
 
 <script>
+    export default {
+        props: ["headerText"]
+    }
 </script>
 
 <style>
