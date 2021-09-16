@@ -3,8 +3,10 @@
     <div>
         <LikeHeader></LikeHeader>
         <h2>{{number}}</h2>
-        <LikeNumber :number='number'></LikeNumber>
-        <LikeNumber v-bind:number='number'></LikeNumber>
+        <!-- このように親から子に渡す値を定義する -->
+        <!-- 属性として渡してあげる -->
+        <LikeNumber :count='number'></LikeNumber>
+        <LikeNumber v-bind:count='number'></LikeNumber>
     </div>
 </template>
 
