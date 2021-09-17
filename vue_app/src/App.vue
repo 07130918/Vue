@@ -18,37 +18,28 @@
         <!-- カスタムイベント名はケバブケースで -->
         <LikeNumber :totalNumber="number" @my-click="incrementNumber"></LikeNumber>
         <LikeNumber v-bind:total-number="number"></LikeNumber>
-
-        <keep-alive>
-            <component :is="currentComponent"></component>
-        </keep-alive>
-        <button @click="currentComponent = 'Home'">Home</button>
-        <button @click="currentComponent = 'About'">About</button>
-        <p>componentタグとv-bind:isでコンポーネントを動的に切り替える</p>
+        <KeepAlive></KeepAlive>
         <Form></Form>
     </div>
 </template>
 
 <script>
 import LikeHeader from './components/LikeHeader.vue'
-import About from './components/About.vue'
-import Home from './components/Home.vue'
+import KeepAlive from './components/KeepAlive.vue'
 import Form from './components/Form.vue'
     export default {
         data() {
             return{
                 number: 10,
                 dynamicSlotName: 'title',
-                currentComponent: 'Home',
             }
         },
         // ローカル登録
         components: {
             // LikeHeader: LikeHeader 短縮できる
             LikeHeader,
-            About,
-            Home,
-            Form
+            Form,
+            KeepAlive
         },
         methods: {
             // valには$emitの第2引数が来る
