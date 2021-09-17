@@ -19,7 +19,9 @@
         <LikeNumber :totalNumber="number" @my-click="incrementNumber"></LikeNumber>
         <LikeNumber v-bind:total-number="number"></LikeNumber>
 
-        <component :is="currentComponent"></component>
+        <keep-alive>
+            <component :is="currentComponent"></component>
+        </keep-alive>
         <button @click="currentComponent = 'Home'">Home</button>
         <button @click="currentComponent = 'About'">About</button>
         <p>componentタグとv-bind:isでコンポーネントを動的に切り替える</p>
