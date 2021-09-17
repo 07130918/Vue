@@ -16,7 +16,7 @@
 <img width="600" alt="スクリーンショット 2021-09-14 23 09 11" src="https://user-images.githubusercontent.com/70265286/133273691-07fd5f96-d489-470b-984c-ecaa83631999.png">
 
 ### [component](https://github.com/07130918/vue/tree/main/component)
-- dataについて
-- componentのローカル登録とグローバル登録について
+    dataについて
+    componentのローカル登録とグローバル登録について
 
-* コンポーネントの詳細は[vue_app](./vue_app)
+    コンポーネントの詳細は[vue_app](./vue_app)
