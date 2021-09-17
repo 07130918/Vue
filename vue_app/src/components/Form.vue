@@ -9,10 +9,25 @@
         <label for="maxNumber">最大人数</label>
         <input type="number" id="maxNumber" v-model.number="eventData.maxNumber">
         <h4>最大人数: {{ eventData.maxNumber }}</h4>
-        
+
         <label for="host">主催者</label>
         <input type="text" id="host" v-model.trim="eventData.host">
         <h4>主催者: {{ eventData.host }}</h4>
+
+        <label for="checkbox">雨天参加</label>
+        <input type="checkbox" id="checkbox" v-model="eventData.checked">
+        <label for="checkbox">{{ eventData.checked }}</label>
+
+        <div>
+            <select v-model="eventData.area">
+            <option disabled value="">Please select one area</option>
+            <option>北海道</option>
+            <option>東北</option>
+            <option>関東</option>
+            <option>沖縄</option>
+            </select>
+            <span>Selected: {{ eventData.area }}</span>
+        </div>
     </div>
 </template>
 
@@ -24,6 +39,8 @@ export default {
                 title: '',
                 maxNumber: '',
                 host: '',
+                checked: false,
+                area: '',
             }
         }
     }
@@ -33,5 +50,6 @@ export default {
 <style scoped>
     #event-form {
         background-color: rgba(100, 10, 185, 0.5);
+        margin-bottom: 20vh;
     }
 </style>
