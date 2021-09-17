@@ -25,12 +25,7 @@
         <button @click="currentComponent = 'Home'">Home</button>
         <button @click="currentComponent = 'About'">About</button>
         <p>componentタグとv-bind:isでコンポーネントを動的に切り替える</p>
-        <div>
-            <h3>イベントフォーム</h3>
-            <label for="title">タイトル</label>
-            <input type="text" id="title" v-model="eventData.title">
-            <h4>{{ eventData.title }}</h4>
-        </div>
+        <Form></Form>
     </div>
 </template>
 
@@ -38,15 +33,13 @@
 import LikeHeader from './components/LikeHeader.vue'
 import About from './components/About.vue'
 import Home from './components/Home.vue'
+import Form from './components/Form.vue'
     export default {
         data() {
             return{
                 number: 10,
                 dynamicSlotName: 'title',
                 currentComponent: 'Home',
-                eventData: {
-                    title: "タイトル"
-                }
             }
         },
         // ローカル登録
@@ -54,7 +47,8 @@ import Home from './components/Home.vue'
             // LikeHeader: LikeHeader 短縮できる
             LikeHeader,
             About,
-            Home
+            Home,
+            Form
         },
         methods: {
             // valには$emitの第2引数が来る
