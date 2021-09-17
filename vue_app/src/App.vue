@@ -2,15 +2,15 @@
     <div>
         <!-- slotにLikeHeader内要素をぶちこめる 名前付きが好ましい -->
         <LikeHeader headerText="hello">
-            <p>私は名前指定がされていないデフォルトスロット、離れていてもh3とくっつけられてしまう</p>
+            <h5>私は名前指定がされていないデフォルトスロット、離れていてもh5とくっつけられてしまう</h5>
             <template #[dynamicSlotName]="slotProps">
-                <h1>トータルの良いいね数</h1>
+                <h2>トータルの良いいね数</h2>
                 <h4>{{ slotProps }}</h4>
                 <!-- <h4>last name: {{ slotProps.user.lastName }}</h4> -->
             </template>
-            <h3>デフォルトスロット</h3>
+            <h5>デフォルトスロット</h5>
             <template v-slot:num>
-                <h2>{{ number }}</h2>
+                <h4>{{ number }}</h4>
             </template>
         </LikeHeader>
         <!-- このように親から子に渡す値を定義する -->
@@ -18,6 +18,8 @@
         <!-- カスタムイベント名はケバブケースで -->
         <LikeNumber :totalNumber="number" @my-click="incrementNumber"></LikeNumber>
         <LikeNumber v-bind:total-number="number"></LikeNumber>
+        <button>Home</button>
+        <button>About</button>
     </div>
 </template>
 
