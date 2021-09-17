@@ -1,9 +1,9 @@
 <template>
     <div>
+        <!-- slotにLikeHeader内要素をぶちこめる 名前付きが好ましい -->
         <LikeHeader headerText="hello">
-            <!-- slotにLikeHeader内要素をぶちこめる 名前付きが好ましい -->
             <p>私は名前指定がされていないデフォルトスロット、離れていてもh3とくっつけられてしまう</p>
-            <template v-slot:title="slotProps">
+            <template #[title]="slotProps">
                 <h1>トータルの良いいね数</h1>
                 <h4>{{ slotProps }}</h4>
                 <h4>last name: {{ slotProps.user.lastName }}</h4>
@@ -26,7 +26,8 @@ import LikeHeader from './components/LikeHeader.vue'
     export default {
         data() {
             return{
-                number: 10
+                number: 10,
+                title: 'title'
             }
         },
         // ローカル登録
