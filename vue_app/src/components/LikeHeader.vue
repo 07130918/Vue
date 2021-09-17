@@ -4,6 +4,7 @@
         <slot name="num"></slot>
         <slot name="num"></slot>
         <p>{{ headerText }}</p>
+        <slot></slot>
     </div>
 </template>
 
