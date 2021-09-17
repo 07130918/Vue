@@ -1,6 +1,8 @@
 <template>
     <div>
-        <slot></slot>
+        <slot name="title">フォールバックコンテンツ(何もない時に表示されるコンテンツ)</slot>
+        <slot name="num"></slot>
+        <slot name="num"></slot>
         <p>{{ headerText }}</p>
     </div>
 </template>

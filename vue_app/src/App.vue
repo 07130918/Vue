@@ -1,9 +1,13 @@
 <template>
     <div>
         <LikeHeader headerText="hello">
-            <!-- slotにLikeHeader内要素をぶちこめる -->
-            <h1>トータルの良いいね数</h1>
-            <h2>{{ number }}</h2>
+            <!-- slotにLikeHeader内要素をぶちこめる 名前付きが好ましい -->
+            <template v-slot:title>
+                <h1>トータルの良いいね数</h1>
+            </template>
+            <template v-slot:num>
+                <h2>{{ number }}</h2>
+            </template>
         </LikeHeader>
         <!-- このように親から子に渡す値を定義する -->
         <!-- 属性として渡してあげる -->
