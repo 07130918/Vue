@@ -13,6 +13,3 @@
         props: ["headerText"]
     }
 </script>
-
-<style>
-</style>
