@@ -25,6 +25,12 @@
         <button @click="currentComponent = 'Home'">Home</button>
         <button @click="currentComponent = 'About'">About</button>
         <p>componentタグとv-bind:isでコンポーネントを動的に切り替える</p>
+        <div>
+            <h3>イベントフォーム</h3>
+            <label for="title">タイトル</label>
+            <input type="text" id="title" v-model="eventData.title">
+            <h4>{{ eventData.title }}</h4>
+        </div>
     </div>
 </template>
 
@@ -38,6 +44,9 @@ import Home from './components/Home.vue'
                 number: 10,
                 dynamicSlotName: 'title',
                 currentComponent: 'Home',
+                eventData: {
+                    title: "タイトル"
+                }
             }
         },
         // ローカル登録
