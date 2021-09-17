@@ -2,14 +2,9 @@
     <div id="event-form">
         <h3>イベントフォーム</h3>
         <EventTitle v-model="eventData.title"></EventTitle>
+        <EventMaxNumber v-model="eventData.maxNumber"></EventMaxNumber>
+        <EventHost v-model="eventData.host"></EventHost>
 
-        <label for="maxNumber">最大人数</label>
-        <input type="number" id="maxNumber" v-model.number="eventData.maxNumber">
-        <h4>最大人数: {{ eventData.maxNumber }}</h4>
-
-        <label for="host">主催者</label>
-        <input type="text" id="host" v-model.trim="eventData.host">
-        <h4>主催者: {{ eventData.host }}</h4>
 
         <label for="checkbox">雨天参加</label>
         <input type="checkbox" id="checkbox" v-model="eventData.checked">
@@ -26,7 +21,10 @@
 </template>
 
 <script>
-import EventTitle from './EventTitle.vue'
+import EventTitle from './form_material/EventTitle.vue'
+import EventMaxNumber from './form_material/EventMaxNumber.vue'
+import EventHost from './form_material/EventHost.vue'
+
 export default {
     data() {
         return {
@@ -41,7 +39,9 @@ export default {
         }
     },
     components: {
-        EventTitle
+        EventTitle,
+        EventMaxNumber,
+        EventHost
     }
 }
 </script>
