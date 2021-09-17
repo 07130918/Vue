@@ -4,11 +4,7 @@
         <EventTitle v-model="eventData.title"></EventTitle>
         <EventMaxNumber v-model="eventData.maxNumber"></EventMaxNumber>
         <EventHost v-model="eventData.host"></EventHost>
-
-
-        <label for="checkbox">雨天参加</label>
-        <input type="checkbox" id="checkbox" v-model="eventData.checked">
-        <label for="checkbox">{{ eventData.checked }}</label>
+        <EventWeather v-model="eventData.checked"></EventWeather>
 
         <div>
             <select v-model="eventData.selectedLocation">
@@ -24,6 +20,7 @@
 import EventTitle from './form_material/EventTitle.vue'
 import EventMaxNumber from './form_material/EventMaxNumber.vue'
 import EventHost from './form_material/EventHost.vue'
+import EventWeather from './form_material/EventWeather.vue'
 
 export default {
     data() {
@@ -41,7 +38,8 @@ export default {
     components: {
         EventTitle,
         EventMaxNumber,
-        EventHost
+        EventHost,
+        EventWeather
     }
 }
 </script>
