@@ -19,14 +19,11 @@
         <label for="checkbox">{{ eventData.checked }}</label>
 
         <div>
-            <select v-model="eventData.area">
-            <option disabled value="">Please select one area</option>
-            <option>北海道</option>
-            <option>東北</option>
-            <option>関東</option>
-            <option>沖縄</option>
+            <select v-model="eventData.selectedLocation">
+                <option disabled value="">Please select one location</option>
+                <option v-for="location in eventData.locations" :key="location">{{ location }}</option>
             </select>
-            <span>Selected: {{ eventData.area }}</span>
+            <span>Selected: {{ eventData.selectedLocation }}</span>
         </div>
     </div>
 </template>
@@ -40,7 +37,8 @@ export default {
                 maxNumber: '',
                 host: '',
                 checked: false,
-                area: '',
+                locations: ["北海道", "東北", "関東", "沖縄"],
+                selectedLocation: '',
             }
         }
     }
