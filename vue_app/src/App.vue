@@ -17,7 +17,7 @@
         <!-- 属性として渡してあげる -->
         <!-- カスタムイベント名はケバブケースで -->
         <LikeNumber :totalNumber="number" @my-click="incrementNumber"></LikeNumber>
-        <LikeNumber v-bind:total-number="number"></LikeNumber>
+        <LikeNumber v-bind:total-number="number" @my-click="incrementNumber"></LikeNumber>
         <KeepAlive></KeepAlive>
         <Form></Form>
     </div>
