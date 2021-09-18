@@ -8,6 +8,7 @@
 
 <script>
     export default {
+        // checkedの場合はこのように宣言する必要がある
         model: {
             prop: 'checked',
             event: 'change'
