@@ -1,8 +1,8 @@
 <template>
     <div>
         <label for="checkbox">雨天参加</label>
-        <input type="checkbox" id="checkbox" :checked="checked" @change="$emit('change', $event.target.checked)">
-        <label for="checkbox">{{ checked }}</label>
+        <input type="checkbox" id="checkbox" :checked="join = checked" @change="$emit('change', $event.target.checked)">
+        <label for="checkbox">{{ join }}</label>
     </div>
 </template>
 
