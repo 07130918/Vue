@@ -5,14 +5,7 @@
         <EventMaxNumber v-model="eventData.maxNumber"></EventMaxNumber>
         <EventHost v-model="eventData.host"></EventHost>
         <EventWeather v-model="eventData.checked"></EventWeather>
-
-        <div>
-            <select v-model="eventData.selectedLocation">
-                <option disabled value="">Please select one location</option>
-                <option v-for="location in eventData.locations" :key="location">{{ location }}</option>
-            </select>
-            <span>Selected: {{ eventData.selectedLocation }}</span>
-        </div>
+        <EventLocation v-model="eventData.selectedLocation" :options="eventData.locations"></EventLocation>
     </div>
 </template>
 
@@ -21,6 +14,7 @@ import EventTitle from './form_material/EventTitle.vue'
 import EventMaxNumber from './form_material/EventMaxNumber.vue'
 import EventHost from './form_material/EventHost.vue'
 import EventWeather from './form_material/EventWeather.vue'
+import EventLocation from './form_material/EventLocation.vue'
 
 export default {
     data() {
@@ -39,7 +33,8 @@ export default {
         EventTitle,
         EventMaxNumber,
         EventHost,
-        EventWeather
+        EventWeather,
+        EventLocation
     }
 }
 </script>
