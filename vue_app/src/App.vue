@@ -19,6 +19,7 @@
         <LikeNumber :totalNumber="number" @my-click="incrementNumber"></LikeNumber>
         <LikeNumber v-bind:total-number="number" @my-click="incrementNumber"></LikeNumber>
         <KeepAlive></KeepAlive>
+        <FilterPractice></FilterPractice>
         <Form></Form>
     </div>
 </template>
@@ -26,7 +27,9 @@
 <script>
 import LikeHeader from './components/LikeHeader.vue'
 import KeepAlive from './components/KeepAlive.vue'
+import FilterPractice from './components/FilterPractice.vue'
 import Form from './components/Form.vue'
+
     export default {
         data() {
             return{
@@ -38,8 +41,9 @@ import Form from './components/Form.vue'
         components: {
             // LikeHeader: LikeHeader 短縮できる
             LikeHeader,
+            KeepAlive,
+            FilterPractice,
             Form,
-            KeepAlive
         },
         methods: {
             // valには$emitの第2引数が来る
