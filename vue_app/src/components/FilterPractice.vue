@@ -1,8 +1,8 @@
 <template>
     <div>
         <h2>{{ title | upperCase }}</h2>
-        <p>{{ subTitle | upperCase }}</p>
-        <p>{{ subTitle | lowerCase }}</p>
+        <p>{{ subTitle | upperCase}}</p>
+        <p>{{ subTitle | lowerCase | addExclamation}}</p>
     </div>
 </template>
 
@@ -18,6 +18,9 @@ export default {
     filters: {
         lowerCase(value) {
             return value.toLowerCase();
+        },
+        addExclamation(value) {
+            return value + "!!!"
         }
     }
 }
