@@ -42,6 +42,6 @@ export default {
 <style scoped>
     #event-form {
         background-color: rgba(100, 10, 185, 0.5);
-        margin-bottom: 20vh;
+        margin-bottom: 5vh;
     }
 </style>

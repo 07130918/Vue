@@ -21,6 +21,7 @@
         <KeepAlive></KeepAlive>
         <FilterPractice></FilterPractice>
         <Form></Form>
+        <TransitionPractice></TransitionPractice>
     </div>
 </template>
 
@@ -29,6 +30,7 @@ import LikeHeader from './components/LikeHeader.vue'
 import KeepAlive from './components/KeepAlive.vue'
 import FilterPractice from './components/FilterPractice.vue'
 import Form from './components/Form.vue'
+import TransitionPractice from './components/TransitionPractice.vue'
 
     export default {
         data() {
@@ -44,6 +46,7 @@ import Form from './components/Form.vue'
             KeepAlive,
             FilterPractice,
             Form,
+            TransitionPractice,
         },
         methods: {
             // valには$emitの第2引数が来る
