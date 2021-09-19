@@ -1,7 +1,7 @@
 <template>
     <div class="main">
         <transition name="fade">
-            <p v-if="show">Hello</p>
+            <h4 v-if="show">Hello</h4>
         </transition>
         <button @click="show = !show">切り替え</button>
     </div>
@@ -18,23 +18,23 @@ export default {
 </script>
 
 <style scoped>
-    .fade-enter{
-        
+    .fade-enter { /*現れるときの最初の状態*/
+        opacity: 0;
     }
-    .fade-enter-active{
-        
+    .fade-enter-active { /*現れるときのトランジションの状態*/
+        transition: opacity .3s;
     }
-    .fade-to{
-        
+    .fade-enter-to { /*現れるときの最後の状態*/
+        opacity: 1;
     }
-    .fade-leave{
-        
+    .fade-leave { /*消えるときの最初の状態*/
+        opacity: 1;
     }
-    .fade-leave-active{
-        
+    .fade-leave-active { /*消えるときのトランジションの状態*/
+        transition: opacity .3s;
     }
-    .fade-leave-to{
-        
+    .fade-leave-to { /*消えるときの最後の状態*/
+        opacity: 0;
     }
     .main {
         width: 70%;
