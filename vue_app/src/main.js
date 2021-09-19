@@ -37,6 +37,7 @@ Vue.directive("border", function (el, binding) {
     }
 });
 
+// フィルターのグローバル登録
 Vue.filter("upperCase", (value) => value.toUpperCase())
 
 new Vue({

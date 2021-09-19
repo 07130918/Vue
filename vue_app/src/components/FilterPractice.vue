@@ -2,6 +2,7 @@
     <div>
         <h2>{{ title | upperCase }}</h2>
         <p>{{ subTitle | upperCase }}</p>
+        <p>{{ subTitle | lowerCase }}</p>
     </div>
 </template>
 
@@ -9,9 +10,14 @@
 export default {
     data() {
         return {
-            tmpData: "hello",
             title: "welcome to Tokyo",
             subTitle: "Tokyo is a great city"
+        }
+    },
+    // フィルターのローカル登録
+    filters: {
+        lowerCase(value) {
+            return value.toLowerCase();
         }
     }
 }
