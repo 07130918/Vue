@@ -4,6 +4,7 @@ import LikeNumber from './components/LikeNumber.vue';
 
 Vue.config.productionTip = false;
 Vue.component('LikeNumber', LikeNumber);
+// カスタムディレクティブのグローバル登録
 // Vue.directive("border", {
     // bind(el, binding, vnode) {
         //ディレクティブが初めて対象の要素に紐付いた時
@@ -21,7 +22,6 @@ Vue.component('LikeNumber', LikeNumber);
         //ディレクティブが紐付いている要素から取り除かれた時
     // }
 // });
-
 // このように書くとbindとupdateに適用することになる
 Vue.directive("border", function (el, binding) {
     // el.style.border = "solid black 2px";

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>This is About.vue</p>
+        <p v-originalName:dotted.shadow="{width: '10px', color: 'blue'}">This is About.vue</p>
         <input type="text" placeholder="keep alive!!!">
     </div>
 </template>
@@ -13,6 +13,21 @@ export default {
     },
     activated() {
         console.log("About: activated")
+    },
+    // カスタムディレクティブのローカル登録
+    directives: {
+        originalName(el, binding) {
+            el.style.borderWidth = binding.value.width;
+            el.style.borderColor = binding.value.color;
+            el.style.borderStyle = binding.arg;
+
+            if (binding.modifiers.round) {
+                el.style.borderRadius = "0.5rem"
+            }
+            if (binding.modifiers.shadow) {
+                el.style.boxShadow = "0 2px 5px rgb(0, 0, 0)"
+            }
+        }
     }
 }
 </script>
