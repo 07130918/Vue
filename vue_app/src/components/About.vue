@@ -24,8 +24,7 @@ export default {
         originalName(el, binding) {
             el.style.borderWidth = binding.value.width;
             el.style.borderColor = binding.value.color;
-            binding.arg === 'dotted' ? 'dotted' : 'solid'
-            el.style.borderStyle = binding.arg;
+            el.style.borderStyle = (binding.arg === 'dotted' ? 'dotted' : 'solid');
 
             if (binding.modifiers.round) {
                 el.style.borderRadius = "0.5rem"
