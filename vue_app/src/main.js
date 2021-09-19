@@ -23,9 +23,10 @@ Vue.component('LikeNumber', LikeNumber);
 // });
 // このように書くとnindとupdateに適用することになる
 Vue.directive("border", function (el, binding) {
-    el.style.border = "solid black 2px";
+    // el.style.border = "solid black 2px";
     el.style.borderWidth = binding.value.width;
     el.style.borderColor = binding.value.color;
+    el.style.borderStyle = binding.arg;
 });
 
 new Vue({

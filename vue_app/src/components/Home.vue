@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p v-border="{width: '5px', color: 'gray'}">This is Home.vue</p>
+        <p v-border:dotted="{width: '5px', color: 'gray'}">This is Home.vue</p>
         <input type="text" placeholder="keep alive!!!">
     </div>
 </template>
