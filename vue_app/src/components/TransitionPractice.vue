@@ -1,5 +1,6 @@
 <template>
     <div class="main">
+        <!-- <transition name="v"> <-デフォルト -->
         <transition name="fade">
             <h4 v-if="show">Hello</h4>
         </transition>
