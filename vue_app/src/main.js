@@ -37,6 +37,10 @@ Vue.directive("border", function (el, binding) {
     }
 });
 
+Vue.filter("upperCase", function (value) {
+    return value.toUpperCase();
+})
+
 new Vue({
   render: h => h(App),
 }).$mount('#app')
