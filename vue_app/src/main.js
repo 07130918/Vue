@@ -21,12 +21,20 @@ Vue.component('LikeNumber', LikeNumber);
         //ディレクティブが紐付いている要素から取り除かれた時
     // }
 // });
-// このように書くとnindとupdateに適用することになる
+
+// このように書くとbindとupdateに適用することになる
 Vue.directive("border", function (el, binding) {
     // el.style.border = "solid black 2px";
     el.style.borderWidth = binding.value.width;
     el.style.borderColor = binding.value.color;
     el.style.borderStyle = binding.arg;
+
+    if (binding.modifiers.round) {
+        el.style.borderRadius = "0.5rem"
+    }
+    if (binding.modifiers.shadow) {
+        el.style.boxShadow = "0 2px 5px rgb(0, 0, 0)"
+    }
 });
 
 new Vue({
