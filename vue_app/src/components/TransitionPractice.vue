@@ -18,16 +18,30 @@
             <p v-if="show" key="bye">さよなら</p>
             <p v-if="!show" key="hello">こんにちは</p>
         </transition>
+
+        <button @click="myComponent = 'ComponentA'">ComponentA</button>
+        <button @click="myComponent = 'ComponentB'">ComponentB</button>
+        <transition :name="myAnimation" mode="out-in">
+            <component :is="myComponent"></component>
+        </transition>
     </div>
 </template>
 
 <script>
+import ComponentA from './transition_material/ComponentA.vue'
+import ComponentB from './transition_material/ComponentB.vue'
+
 export default {
     data() {
         return {
             show: true,
-            myAnimation: 'fade',
-        }
+            myAnimation: "fade",
+            myComponent: "ComponentA",
+        };
+    },
+    components: {
+        ComponentA,
+        ComponentB
     }
 }
 </script>
