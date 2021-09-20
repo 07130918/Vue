@@ -1,7 +1,7 @@
 <template>
     <div class="main">
         <!-- <transition name="v"> <-デフォルト -->
-        <transition name="fade">
+        <transition enter-active-class="animate__animated animate__bounce" leave-active-class="animate__animated animate__shakeX" appear>
             <h4 v-if="show">Hello</h4>
         </transition>
         <button @click="show = !show">切り替え</button>
