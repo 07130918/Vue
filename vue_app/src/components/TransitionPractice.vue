@@ -5,7 +5,8 @@
             <h4 v-if="show">Hello</h4>
         </transition>
         <button @click="show = !show">切り替え</button>
-        <transition name="slide">
+        <!-- animationとtransitionの効果時間が異なる時どちらに合わせるかをtypeで指定 -->
+        <transition name="slide" type="animation">
             <p v-if="show">bye</p>
         </transition>
     </div>
@@ -44,11 +45,11 @@ export default {
         opacity: 0;
     }
     .slide-enter-active{
-        animation: slide-in 0.5s;
+        animation: slide-in .5s;
         transition: opacity 1s;
     }
     .slide-leave-active{
-        animation: slide-in 0.5s reverse;
+        animation: slide-in .5s reverse;
         transition: opacity 1s;
     }
 
