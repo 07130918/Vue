@@ -13,7 +13,8 @@
         <transition :name="myAnimation" appear>
             <p v-if="show">bye</p>
         </transition>
-        <transition :name="myAnimation">
+        <!-- mode="out-in"で要素が完全に出きってから切り替わる -->
+        <transition :name="myAnimation" mode="out-in">
             <p v-if="show" key="bye">さよなら</p>
             <p v-if="!show" key="hello">こんにちは</p>
         </transition>
