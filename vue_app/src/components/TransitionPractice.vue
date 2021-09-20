@@ -6,6 +6,7 @@
         <button @click="show = !show">切り替え</button>
         <br><br>
         <transition
+            :css="false"
             @before-enter="beforeEnter"
             @enter="enter"
             @after-enter="afterEnter"
@@ -59,14 +60,30 @@ export default {
         ComponentB
     },
     methods: {
-        beforeEnter() {},
-        enter() {},
-        afterEnter() {},
-        enterCancelled() {},
-        beforeLeave() {},
-        leave() {},
-        afterLeave() {},
-        leaveCancelled() {},
+        beforeEnter(el) { //現れる前
+
+        },
+        enter(el, done) { //現れるとき
+
+        },
+        afterEnter(el) { //現れた後
+
+        },
+        enterCancelled(el) { //現れるアニメーションがキャンセルされた時
+
+        },
+        beforeLeave(el) { //消える前
+
+        },
+        leave(el, done) { //消えるとき
+
+        },
+        afterLeave(el) { //消えた後
+
+        },
+        leaveCancelled(el) { //消えるアニメーションがキャンセルされたとき
+
+        },
     }
 }
 </script>
@@ -79,6 +96,7 @@ export default {
     background-color: deeppink;
     border-radius: 100px;
 }
+
 .fade-enter { /*現れるときの最初の状態*/
     opacity: 0;
 }
@@ -97,6 +115,7 @@ export default {
 .fade-leave-to { /*消えるときの最後の状態*/
     opacity: 0;
 }
+
 .slide-enter, .slide-leave-to {
     opacity: 0;
 }
@@ -117,6 +136,7 @@ export default {
         transform: translateX(0);
     }
 }
+
 .main {
     width: 70%;
     margin: 3vh auto 20vh;
