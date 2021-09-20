@@ -1,13 +1,17 @@
 <template>
     <div class="main">
-        <!-- <transition name="v"> <-デフォルト -->
-        <transition enter-active-class="animate__animated animate__bounce" leave-active-class="animate__animated animate__shakeX" appear>
-            <h4 v-if="show">Hello</h4>
-        </transition>
+        <button @click="myAnimation = 'slide'">Slide</button>
+        <button @click="myAnimation = 'fade'">Fade</button>
+        <p>{{myAnimation}}</p>
         <button @click="show = !show">切り替え</button>
         <!-- animationとtransitionの効果時間が異なる時どちらに合わせるかをtypeで指定 -->
-        <transition name="slide" type="animation" appear>
+        <transition :name="myAnimation" appear>
             <p v-if="show">bye</p>
+        </transition>
+        <!-- <transition name="v"> <-デフォルト -->
+        <transition
+            enter-active-class="animate__animated animate__bounce" leave-active-class="animate__animated animate__shakeX" appear>
+            <h4 v-if="show">Hello</h4>
         </transition>
     </div>
 </template>
@@ -17,6 +21,7 @@ export default {
     data() {
         return {
             show: true,
+            myAnimation: 'fade',
         }
     }
 }
@@ -46,11 +51,11 @@ export default {
     }
     .slide-enter-active{
         animation: slide-in .5s;
-        transition: opacity 1s;
+        transition: opacity .5s;
     }
     .slide-leave-active{
         animation: slide-in .5s reverse;
-        transition: opacity 1s;
+        transition: opacity .5s;
     }
 
     @keyframes slide-in {
