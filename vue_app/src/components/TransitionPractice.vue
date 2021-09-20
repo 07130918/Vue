@@ -125,6 +125,10 @@ export default {
     border-radius: 100px;
 }
 
+.fade-move {
+    /* transition-groupのみにつけれる */
+    transition: transform .5s;
+}
 .fade-enter { /*現れるときの最初の状態*/
     opacity: 0;
 }
@@ -139,11 +143,16 @@ export default {
 }
 .fade-leave-active { /*消えるときのトランジションの状態*/
     transition: opacity .3s;
+    position: absolute;
+    width: 200px;
 }
 .fade-leave-to { /*消えるときの最後の状態*/
     opacity: 0;
 }
 
+.slide-move {
+    transition: transform .5s;
+}
 .slide-enter, .slide-leave-to {
     opacity: 0;
 }
@@ -154,6 +163,8 @@ export default {
 .slide-leave-active{
     animation: slide-in .5s reverse;
     transition: opacity .5s;
+    position: absolute;
+    width: 200px;
 }
 
 @keyframes slide-in {
