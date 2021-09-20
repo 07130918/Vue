@@ -1,24 +1,13 @@
 <template>
     <div class="main">
-        <button @click="myAnimation = 'slide'">Slide</button>
-        <button @click="myAnimation = 'fade'">Fade</button>
-        <p>{{myAnimation}}</p>
+        <button @click="animationType = 'slide'">Slide</button>
+        <button @click="animationType = 'fade'">Fade</button>
+        <p>{{animationType}}</p>
         <br>
-        <button @click="add">追加</button>
-        <ul style="width: 200px; margin: auto;">
-            <transition-group :name="myAnimation">
-                <li style="cursor: pointer;"
-                    v-for="(number, index) in numbers" :key="number"
-                    @click="remove(index)">
-                    {{ number }}
-                </li>
-            </transition-group>
-        </ul>
+        <TransitionGroupPractice :animationType="animationType"></TransitionGroupPractice>
         <button @click="show = !show">切り替え</button>
         <br><br>
-        <transition :css="false" @before-enter="beforeEnter" @enter="enter" @leave="leave">
-            <div class="circle" v-if="show"></div>
-        </transition>
+        <TransitionCircle :show="show"></TransitionCircle>
         <br>
         <!-- <transition name="v"> <-デフォルト -->
         <transition
@@ -26,24 +15,26 @@
             <h4 v-if="show">Hello</h4>
         </transition>
         <!-- animationとtransitionの効果時間が異なる時どちらに合わせるかをtypeで指定 -->
-        <transition :name="myAnimation" appear>
+        <transition :name="animationType" appear>
             <p v-if="show">bye</p>
         </transition>
         <!-- mode="out-in"で要素が完全に出きってから切り替わる -->
-        <transition :name="myAnimation" mode="out-in">
+        <transition :name="animationType" mode="out-in">
             <p v-if="show" key="bye">さよなら</p>
             <p v-if="!show" key="hello">こんにちは</p>
         </transition>
 
-        <button @click="myComponent = 'ComponentA'">ComponentA</button>
-        <button @click="myComponent = 'ComponentB'">ComponentB</button>
-        <transition :name="myAnimation" mode="out-in">
-            <component :is="myComponent"></component>
+        <button @click="currentComponent = 'ComponentA'">ComponentA</button>
+        <button @click="currentComponent = 'ComponentB'">ComponentB</button>
+        <transition :name="animationType" mode="out-in">
+            <component :is="currentComponent"></component>
         </transition>
     </div>
 </template>
 
 <script>
+import TransitionGroupPractice from './transition_material/TransitionGroupPractice.vue'
+import TransitionCircle from './transition_material/TransitionCircle.vue'
 import ComponentA from './transition_material/ComponentA.vue'
 import ComponentB from './transition_material/ComponentB.vue'
 
@@ -51,80 +42,20 @@ export default {
     data() {
         return {
             show: true,
-            myAnimation: "fade",
-            myComponent: "ComponentA",
-            numbers: [0, 1, 2],
-            nextNumber: 3,
+            animationType: "fade",
+            currentComponent: "ComponentA",
         };
     },
     components: {
+        TransitionGroupPractice,
+        TransitionCircle,
         ComponentA,
-        ComponentB
-    },
-    methods: {
-        randomIndex() {
-            return Math.floor(Math.random() * this.numbers.length)
-        },
-        add(){
-            this.numbers.splice(this.randomIndex(), 0, this.nextNumber);
-            this.nextNumber += 1;
-        },
-        remove(index) {
-            this.numbers.splice(index, 1);
-        },
-        beforeEnter(el) { //現れる前
-            el.style.scale = 'scale(0)'
-        },
-        enter(el, done) { //現れるとき
-            let scale = 0;
-            const interval = setInterval(() => {
-                el.style.transform = `scale(${scale})`
-                scale += 0.1
-                if (scale > 1) {
-                    clearInterval(interval);
-                    done();
-                }
-            }, 10)
-        },
-        // afterEnter(el) { //現れた後
-
-        // },
-        // enterCancelled(el) { //現れるアニメーションがキャンセルされた時
-
-        // },
-        // beforeLeave(el) { //消える前
-
-        // },
-        leave(el, done) { //消えるとき
-            let scale = 1;
-            const interval = setInterval(() => {
-                el.style.transform = `scale(${scale})`
-                scale -= 0.1
-                if (scale < 0) {
-                    clearInterval(interval);
-                    done();
-                }
-            }, 10)
-        },
-        // afterLeave(el) { //消えた後
-
-        // },
-        // leaveCancelled(el) { //消えるアニメーションがキャンセルされたとき
-
-        // },
+        ComponentB,
     }
 }
 </script>
 
-<style scoped>
-.circle {
-    width: 200px;
-    height: 200px;
-    margin: auto;
-    background-color: deeppink;
-    border-radius: 100px;
-}
-
+<style>
 .fade-move {
     /* transition-groupのみにつけれる */
     transition: transform .5s;
