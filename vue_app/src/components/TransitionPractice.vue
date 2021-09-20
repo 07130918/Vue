@@ -6,7 +6,7 @@
         </transition>
         <button @click="show = !show">切り替え</button>
         <!-- animationとtransitionの効果時間が異なる時どちらに合わせるかをtypeで指定 -->
-        <transition name="slide" type="animation">
+        <transition name="slide" type="animation" appear>
             <p v-if="show">bye</p>
         </transition>
     </div>
