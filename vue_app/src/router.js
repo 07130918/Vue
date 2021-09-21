@@ -7,8 +7,9 @@ import Users from './views/Users.vue'
 Vue.use(Router);
 
 export default new Router({
+    mode: "history",
     routes: [
-        { path: "/", component: IndexApp },
+        { path: "/index", component: IndexApp },
         { path: "/home", component: Home },
         { path: "/users", component: Users },
     ]
