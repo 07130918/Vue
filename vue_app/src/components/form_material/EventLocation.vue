@@ -1,5 +1,6 @@
 <template>
     <div>
+        <p>エリア</p>
         <select :value="value" @change="$emit('input',$event.target.value)">
             <option v-for="selectedLocation in options" :key="selectedLocation" :selected="selectedLocation === value">
                 {{ selectedLocation }}
