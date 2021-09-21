@@ -7,7 +7,7 @@
             <router-link to="/home" class="link" active-class="link--active" exact>
                 Home ->
             </router-link>
-            <router-link to="/users" class="link" active-class="link--active" exact>
+            <router-link to="/users/1" class="link" active-class="link--active" exact>
                 Users ->
             </router-link>
         </nav>
