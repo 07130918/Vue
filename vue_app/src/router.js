@@ -11,6 +11,6 @@ export default new Router({
     routes: [
         { path: "/index", component: IndexApp },
         { path: "/home", component: Home },
-        { path: "/users/:id", component: Users },
+        { path: "/users/:id", component: Users, props: true },
     ]
 })

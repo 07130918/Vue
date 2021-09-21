@@ -6,17 +6,13 @@
         <router-link to="/users/1">ユーザー1</router-link>
         <router-link to="/users/2">ユーザー2</router-link>
         <hr>
-        <h1>User No. {{ userId }}</h1>
+        <h1>User No. {{ id }}</h1>
     </div>
 </template>
 
 <script>
 export default {
-    data(){
-        return {
-            userId: this.$route.params.id,
-        }
-    },
+    props: ["id"],
     methods: {
         toHome() {
             this.$router.push({path: "/home"});
