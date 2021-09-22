@@ -10,7 +10,7 @@
         <router-link :to="'/users/' + (Number(id) + 1) + '/profile'">
             次のユーザーのプロフィール
         </router-link>
-        <router-link :to="{name: 'users-id-profile', params: { id: (Number(id) - 1) }}">
+        <router-link :to="{name: 'users-id-profile', params: { id: (Number(id) - 1) }, query: { lang: 'ja' }}">
             前のユーザーのプロフィール
         </router-link>
         <router-view></router-view>
