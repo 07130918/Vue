@@ -39,7 +39,10 @@ export default new Router({
         },
         { path: '*', redirect: '/index' }
     ],
-    scrollBehavior() {
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition
+        }
         console.log("scrollBehavior")
     }
 })
