@@ -1,5 +1,6 @@
 <template>
     <div style="width: 700px; margin: auto; padding-top: 50px;">
+        <router-view name="header"></router-view>
         <nav>
             <router-link to="/index" class="link" active-class="link--active" exact>
                 Index ->
