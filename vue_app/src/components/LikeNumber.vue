@@ -27,7 +27,7 @@
             increment() {
                 // 第1引数に任意の命名, (第2引数にデータ)
                 // $emitはカスタムイベントを作る
-                this.$emit("my-click", this.totalNumber++);
+                this.$emit("my-click", this.totalNumber + 1);
             }
         }
     }
