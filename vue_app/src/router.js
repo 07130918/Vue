@@ -3,6 +3,8 @@ import Router from "vue-router";
 import IndexApp from './views/IndexApp.vue'
 import Home from './views/Home.vue'
 import Users from './views/Users.vue'
+import UsersProfile from './views/UsersProfile.vue'
+import UsersPosts from './views/UsersPosts.vue'
 
 Vue.use(Router);
 
@@ -11,6 +13,14 @@ export default new Router({
     routes: [
         { path: "/index", component: IndexApp },
         { path: "/home", component: Home },
-        { path: "/users/:id", component: Users, props: true },
+        {
+            path: "/users/:id",
+            component: Users,
+            props: true,
+            children: [
+                { path: "posts", component: UsersPosts },
+                { path: "profile", component: UsersProfile }
+            ]
+        },
     ]
 })
