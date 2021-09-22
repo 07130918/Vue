@@ -12,7 +12,9 @@
                 Users ->
             </router-link>
         </nav>
-        <router-view></router-view>
+        <transition name="fade">
+            <router-view></router-view>
+        </transition>
     </div>
 </template>
 
@@ -22,5 +24,12 @@
 }
 .link--active {
     font-size: 24px;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
 }
 </style>
