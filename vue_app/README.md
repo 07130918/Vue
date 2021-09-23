@@ -1,4 +1,6 @@
 # vue_app
+### vuex
+![スクリーンショット 2021-09-23 11 47 40](https://user-images.githubusercontent.com/70265286/134447958-50fe0304-468b-4c07-aa74-f68db74cd017.png)
 
 ## Project setup
 ```
