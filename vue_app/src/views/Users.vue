@@ -20,6 +20,16 @@
 <script>
 export default {
     props: ["id"],
+    beforeRouteEnter(to, from, next) {
+        next();
+    },
+    beforeRouteUpdate(to, from, next) {
+        next();
+    },
+    beforeRouteLeave(to, from, next) {
+        // console.log('Left Users.vue')
+        next();
+    },
     methods: {
         toHome() {
             this.$router.push({path: "/home"});
