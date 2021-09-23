@@ -41,6 +41,14 @@ Vue.directive("border", function (el, binding) {
 // フィルターのグローバル登録
 Vue.filter("upperCase", (value) => value.toUpperCase())
 
+// グローバルナビゲーションガード
+router.beforeEach((to, from, next) => {
+    if (to.path === "/users/0/profile") {
+        next('/');
+    }
+    next();
+})
+
 new Vue({
     router,
     render: h => h(App),
