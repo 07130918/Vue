@@ -19,6 +19,10 @@ export default new Router({
                 default: Home,
                 header: HeaderHome
             },
+            beforeEnter(to, from, next) {
+                console.log("This is views/Home.vue!!!")
+                next();
+            }
         },
         {
             path: "/users/:id",
