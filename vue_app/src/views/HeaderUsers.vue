@@ -1,6 +1,7 @@
 <template>
     <div>
         <h2>UsersHeader</h2>
+        <p>store.jsのstate.count up!</p>
         <button @click=incrementStoreCount>+1</button>
     </div>
 </template>
@@ -9,7 +10,7 @@
 export default {
     methods: {
         incrementStoreCount() {
-            this.$store.state.count++;
+            return this.$store.state.count++;
         }
     }
 }
