@@ -10,7 +10,8 @@
 export default {
     methods: {
         incrementStoreCount() {
-            return this.$store.state.count++;
+            // commit()でmutationsにある関数を実行
+            this.$store.commit('increment', 1);
         }
     }
 }
