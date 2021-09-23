@@ -20,7 +20,7 @@ export default {
         // }
 
         // dispatch, actionを使った書き方
-        ...mapActions(["increment"])
+        ...mapActions("count", ["increment"])
         // increment() {
         //     this.$store.dispatch("increment", 2)
         // },
