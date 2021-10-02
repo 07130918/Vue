@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import About from './About.vue'
-import Home from './Home.vue'
+import About from './alive/About.vue'
+import Home from './alive/Home.vue'
 
 export default {
     data() {
