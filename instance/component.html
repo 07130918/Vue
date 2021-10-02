@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <a href="../../">vuejsディレクトリへ</a>
+    <a href="../instance/">親ディレクトリへ</a>
+    <a href="../component/">コンポーネント詳細</a>
+    <div id="app">
+        <!-- コンポーネント名をタグのようにすることで再利用可能になる -->
+        <hello></hello>
+        <hello></hello>
+        <hello></hello>
+    </div>
+
+    <script>
+        // 第1引数にコンポーネント名
+        // コンポーネントは名前付きの再利用可能な Vue インスタンス
+        Vue.component('hello', {
+            template: '<p>こんにちは</p>'
+        })
+        new Vue({ el: '#app' })
+    </script>
+</body>
+
+</html>

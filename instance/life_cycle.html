@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <a href="../../">vuejsディレクトリへ</a>
+    <a href="../instance/">親ディレクトリへ</a>
+    <div id="app">
+        <p>{{ message }}</p>
+    </div>
+
+    <div id="app2"></div>
+    <div id="app3"></div>
+    <div id="app4">
+        <p>こんにちは、{{ band }}</p>
+        <button @click="changeBandName">bandを変更</button>
+        <button @click="destroy">インスタンスを破壊</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'こんにちは',
+                band: 'Man with a mission'
+            }
+        })
+
+        new Vue({
+            data: {
+                el: '#app2',
+                message: 'Come on!',
+                band: 'Man with a mission'
+            },
+            template: '<h1>{{ message }}</h1>'
+        })
+
+        new Vue({
+            el: '#app3',
+            data: {
+                message: 'Come on!',
+                band: 'Man with a mission'
+            },
+            render: function (createElement) {
+                return createElement('h1', this.band);
+            }
+        })
+
+        new Vue({
+            el: '#app4',
+            data: {
+                band: 'Man with a mission'
+            },
+            // 元から用意されているプロパティのようなもの
+            beforeCreate: function () {
+                console.log('beforeCreate')
+            },
+            created: function () {
+                console.log('created')
+            },
+            beforeMount: function () {
+                console.log('beforeMount')
+            },
+            mounted: function () {
+                console.log('Mounted')
+            },
+            beforeUpdate: function () {
+                console.log('beforeUpdate')
+            },
+            updated: function () {
+                console.log('updated')
+            },
+            beforeDestroy: function () {
+                console.log('beforeDestroy')
+            },
+            destroyed: function () {
+                console.log('destroyed')
+            },
+            methods: {
+                changeBandName: function () {
+                    this.band = 'ONE OK ROCK';
+                },
+                destroy: function () {
+                    this.$destroy();
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

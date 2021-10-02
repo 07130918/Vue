@@ -1,0 +1,3 @@
+- ディレクティブ(v-から始まるやつ)
+- 動的なclassやstyle
+- data, computed, methods, watch
