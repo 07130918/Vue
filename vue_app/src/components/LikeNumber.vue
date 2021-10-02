@@ -2,7 +2,7 @@
 <!-- template内は必ず1つの要素をルートとしなければならない -->
     <div>
         <p>いいね: {{ halfNumber }}</p>
-        <button @click="increment">+1</button>
+        <button @click="increment">+0.5</button>
     </div>
 </template>
 
