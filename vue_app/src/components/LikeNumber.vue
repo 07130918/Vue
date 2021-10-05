@@ -3,6 +3,9 @@
     <div>
         <p>いいね÷2 = {{ halfNumber }}</p>
         <button @click="increment">+1</button>
+        <div>
+            <button @click="popup(10)">alert発動</button>
+        </div>
     </div>
 </template>
 
@@ -16,6 +19,9 @@
             totalNumber: {
                 type: Number,
                 required: true
+            },
+            message: {
+                type: String
             }
         },
         computed: {
@@ -24,15 +30,18 @@
             }
         },
         methods: {
-            inc_sub() {
-                console.log(this.$parent.$data);
-                console.log(this.$parent.$data.number);
-                return this.totalNumber + 1;
-            },
             increment() {
                 // 第1引数に任意の命名, (第2引数にデータ操作)
                 // $emitはカスタムイベントを作る
-                this.$emit("my-click", this.inc_sub());
+                this.$emit("my-click", this.totalNumber + 1);
+            },
+            random_num(max) {
+                console.log(this.$parent.$data);
+                console.log(this.$parent.$data.dynamicSlotName);
+                return String(Math.floor(Math.random() * max));
+            },
+            popup(max) {
+                this.$emit("my-popup", this.random_num(max));
             }
         }
     }

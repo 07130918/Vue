@@ -13,11 +13,13 @@
                 <h4>{{ number }}</h4>
             </template>
         </LikeHeader>
-        <!-- このように親から子に渡す値を定義する -->
-        <!-- 属性として渡してあげる -->
+        <!-- このように親から子に渡す値を定義する, 属性として渡してあげる -->
         <!-- カスタムイベント名はケバブケースで -->
-        <LikeNumber :totalNumber="number" @my-click="incrementNumber"></LikeNumber>
-        <LikeNumber v-bind:total-number="number" @my-click="incrementNumber"></LikeNumber>
+        <LikeNumber
+            :totalNumber="number" :message="message" @my-click="incrementNumber" @my-popup="popup"
+        ></LikeNumber>
+        <LikeNumber
+            v-bind:total-number="number" :message="message" v-on:my-click="incrementNumber" @my-popup="popup"></LikeNumber>
         <KeepAlive></KeepAlive>
         <FilterPractice></FilterPractice>
         <Form></Form>
@@ -37,6 +39,7 @@ import TransitionPractice from '../components/TransitionPractice.vue'
             return{
                 number: 10,
                 dynamicSlotName: 'title',
+                message: '',
             }
         },
         // ローカル登録
@@ -52,6 +55,10 @@ import TransitionPractice from '../components/TransitionPractice.vue'
             // valには$emitの第2引数が来る
             incrementNumber(val) {
                 this.number = val;
+            },
+            popup(value) {
+                this.message = value;
+                alert(this.message);
             }
         }
     }
