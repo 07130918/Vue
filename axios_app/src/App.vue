@@ -8,8 +8,12 @@
         <textarea id="comment" v-model="comment"></textarea>
         <br><br>
         <button @click="createComment">コメント送信</button>
-        <h2>掲示板</h2>
-
+        <h2>掲示板</h2> <!-- post.nameはユニーク -->
+        <div v-for="post in posts" :key="post.name">
+            <div>名前: {{post.fields.name.stringValue}}</div>
+            <div>コメント: {{post.fields.commennt.stringValue}}</div>
+            <br>
+        </div>
     </div>
 </template>
 
@@ -21,6 +25,7 @@ export default {
         return {
             name: "",
             comment: "",
+            posts: [],
         }
     },
     //インスタンスが読み込まれたら実行したいのでcreatedを採用
@@ -28,6 +33,7 @@ export default {
         axios.get(
             "https://firestore.googleapis.com/v1/projects/vuejs-http-b5001/databases/(default)/documents/comments"
             ).then(response => {
+                this.posts = response.data.documents;
                 console.log(response);
             })
     },
