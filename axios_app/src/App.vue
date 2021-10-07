@@ -23,11 +23,18 @@ export default {
             comment: "",
         }
     },
+    created() { // getは, 第1引数: URL, 第2引数: リクエストの設定(なくても良い)
+        axios.get(
+            "https://firestore.googleapis.com/v1/projects/vuejs-http-b5001/databases/(default)/documents/comments"
+            ).then(response => {
+                console.log(response);
+            })
+    },
     methods: {
         createComment() {
-            // 第1引数: URL, 第2引数: データ, 第3引数: header等詳細
+            // postは, 第1引数: URL, 第2引数: データ, 第3引数: header等詳細
             axios.post(
-                'https://firestore.googleapis.com/v1/projects/vuejs-http-b5001/databases/(default)/documents/comments',
+                "https://firestore.googleapis.com/v1/projects/vuejs-http-b5001/databases/(default)/documents/comments",
                 {   // cloud firestoreでの書き方
                     fields: {
                         name: {
