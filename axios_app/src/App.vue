@@ -14,7 +14,9 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+// カスタムインスタンスをimportする場合
+import axios from './axios-auth'
 import BulletinBoard from './components/BulletinBoard.vue'
 
 export default {
