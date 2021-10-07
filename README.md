@@ -20,3 +20,7 @@
     componentのローカル登録とグローバル登録について
 
     コンポーネントの詳細はvue_app
+
+### [axios_app](https://github.com/07130918/vue/tree/main/axios_app)
+    axiosを使ったhttp通信について
+    
