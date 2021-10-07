@@ -1,24 +1,3 @@
-# axios_app
+### cloud FireStore
+https://console.firebase.google.com/u/0/project/vuejs-http-b5001/firestore/data/~2Fcomments~2F1GLOHxFCaFBMMQxLJuuK?hl=ja
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
