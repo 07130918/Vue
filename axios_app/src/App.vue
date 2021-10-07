@@ -8,17 +8,14 @@
         <textarea id="comment" v-model="comment"></textarea>
         <br><br>
         <button @click="createComment">コメント送信</button>
-        <h2>掲示板</h2> <!-- post.nameはユニーク -->
-        <div v-for="post in posts" :key="post.name">
-            <div>名前: {{post.fields.name.stringValue}}</div>
-            <div>コメント: {{post.fields.commennt.stringValue}}</div>
-            <br>
-        </div>
+        <h2>掲示板</h2>
+        <BulletinBoard :posts="posts"></BulletinBoard>
     </div>
 </template>
 
 <script>
 import axios from "axios";
+import BulletinBoard from './components/BulletinBoard.vue'
 
 export default {
     data() {
@@ -27,6 +24,9 @@ export default {
             comment: "",
             posts: [],
         }
+    },
+    components: {
+        BulletinBoard
     },
     //インスタンスが読み込まれたら実行したいのでcreatedを採用
     created() { // getは, 第1引数: URL, 第2引数: リクエストの設定(なくても良い)
