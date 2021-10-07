@@ -31,9 +31,9 @@ export default {
     //インスタンスが読み込まれたら実行したいのでcreatedを採用
     created() { // getは, 第1引数: URL, 第2引数: リクエストの設定(なくても良い)
         axios.get("/comments").then(response => {
-                this.posts = response.data.documents;
-                console.log(response);
-            })
+            this.posts = response.data.documents;
+            console.log(response);
+        })
     },
     methods: {
         createComment() {
