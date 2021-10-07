@@ -20,9 +20,6 @@
                 type: Number,
                 required: true
             },
-            message: {
-                type: String
-            }
         },
         computed: {
             halfNumber() {
