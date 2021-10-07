@@ -30,9 +30,7 @@ export default {
     },
     //インスタンスが読み込まれたら実行したいのでcreatedを採用
     created() { // getは, 第1引数: URL, 第2引数: リクエストの設定(なくても良い)
-        axios.get(
-            "https://firestore.googleapis.com/v1/projects/vuejs-http-b5001/databases/(default)/documents/comments"
-            ).then(response => {
+        axios.get("/comments").then(response => {
                 this.posts = response.data.documents;
                 console.log(response);
             })
@@ -40,9 +38,7 @@ export default {
     methods: {
         createComment() {
             // postは, 第1引数: URL, 第2引数: データ, 第3引数: header等詳細
-            axios.post(
-                "https://firestore.googleapis.com/v1/projects/vuejs-http-b5001/databases/(default)/documents/comments",
-                {   // cloud firestoreでの書き方
+            axios.post("/comments", { // cloud firestoreでの書き方
                     fields: {
                         name: {
                             stringValue:this.name,
