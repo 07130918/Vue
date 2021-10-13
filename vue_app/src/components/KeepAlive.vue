@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- ビルトインコンポーネント -->
         <keep-alive>
             <component :is="currentComponent"></component>
         </keep-alive>
