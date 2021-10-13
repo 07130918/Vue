@@ -15,11 +15,8 @@
         </LikeHeader>
         <!-- このように親から子に渡す値を定義する, 属性として渡してあげる -->
         <!-- カスタムイベント名はケバブケースで -->
-        <LikeNumber
-            :totalNumber="number" :message="message" @my-click="incrementNumber" @my-popup="popup"
-        ></LikeNumber>
-        <LikeNumber
-            v-bind:total-number="number" :message="message" v-on:my-click="incrementNumber" @my-popup="popup"></LikeNumber>
+        <LikeNumber :totalNumber="number" @my-click="incrementNumber" @my-popup="popup"></LikeNumber>
+        <LikeNumber v-bind:total-number="number" v-on:my-click="incrementNumber" @my-popup="popup"></LikeNumber>
         <KeepAlive></KeepAlive>
         <FilterPractice></FilterPractice>
         <Form></Form>
