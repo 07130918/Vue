@@ -10,12 +10,12 @@ import Router from "vue-router";
 
 // 動的import
 const IndexApp = () => import(/* webpackChunkName: "Index" */ './views/IndexApp.vue');
-const Home = () => import(/* webpackChunkName: "Home" */ './views/Home.vue');
-const Users = () => import(/* webpackChunkName: "Users" */'./views/Users.vue');
-const UsersProfile = () => import(/* webpackChunkName: "UsersProfile" */ './views/UsersProfile.vue');
-const UsersPosts = () => import(/* webpackChunkName: "UsersPosts" */ './views/UsersPosts.vue');
-const HeaderUsers = () => import(/* webpackChunkName: "HeaderUsers" */ './views/HeaderUsers.vue');
-const HeaderHome = () => import(/* webpackChunkName: "HeaderHome" */ './views/HeaderHome.vue');
+const Home = () => import(/* webpackChunkName: "Home" */ './views/home/Home.vue');
+const HeaderHome = () => import(/* webpackChunkName: "HeaderHome" */ './views/home/HeaderHome.vue');
+const Users = () => import(/* webpackChunkName: "Users" */'./views/users/Users.vue');
+const HeaderUsers = () => import(/* webpackChunkName: "HeaderUsers" */ './views/users/HeaderUsers.vue');
+const UsersProfile = () => import(/* webpackChunkName: "UsersProfile" */ './views/users/UsersProfile.vue');
+const UsersPosts = () => import(/* webpackChunkName: "UsersPosts" */ './views/users/UsersPosts.vue');
 
 Vue.use(Router);
 
