@@ -2,7 +2,7 @@
     <div>
         <!-- slotにSlotPractice内要素をぶちこめる 名前付きが好ましい -->
         <SlotPractice headerText="hello">
-            <h5>私は名前指定がされていないデフォルトスロット、離れていてもh5とくっつけられてしまう</h5>
+            <h5>私は名前指定がされていないデフォルトスロット、離れていても他の"デフォルトスロット"とくっつけられてしまう</h5>
             <template #[dynamicSlotName]="slotProps">
                 <h2>トータルの良いいね数</h2>
                 <h4>{{ slotProps }}</h4>
