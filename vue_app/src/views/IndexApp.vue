@@ -6,7 +6,7 @@
             <template #[dynamicSlotName]="slotProps">
                 <h2>トータルの良いいね数</h2>
                 <h4>{{ slotProps }}</h4>
-                <!-- <h4>last name: {{ slotProps.user.lastName }}</h4> -->
+                <h4>last name: {{ slotProps.user.lastName }}</h4>
             </template>
             <h5>デフォルトスロット</h5>
             <template v-slot:num>
