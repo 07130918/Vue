@@ -12,10 +12,10 @@
 
 <script>
 import MixinPractice from './MixinPractice.vue'
-import { tokyoNumber } from "@/tokyoNumber"
+import mixinObject from "@/mixinObject"
 
 export default {
-    mixins: [tokyoNumber],
+    mixins: [mixinObject],
     data() {
         return {
             head: "Mixin↓"

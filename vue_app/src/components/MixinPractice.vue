@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import { tokyoNumber } from "@/tokyoNumber"
+import mixinObject from "@/mixinObject"
 
 export default {
-    mixins: [tokyoNumber]
+    mixins: [mixinObject]
 }
 </script>
