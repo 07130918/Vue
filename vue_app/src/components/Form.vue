@@ -2,6 +2,8 @@
     <div id="event-form">
         <h3>イベントフォーム</h3>
         <EventTitle v-model="eventData.title"></EventTitle>
+        <!-- v-modelを分解して考えると以下のことをやっている -->
+        <!-- <EventTitle :value="eventData.title" @input="eventData.title = $event.target.value"></EventTitle> -->
         <EventMaxNumber v-model="eventData.maxNumber"></EventMaxNumber>
         <EventHost v-model="eventData.host"></EventHost>
         <EventWeather v-model="eventData.checked"></EventWeather>
