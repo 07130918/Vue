@@ -33,7 +33,7 @@ import TransitionPractice from '../components/TransitionPractice.vue'
 
     export default {
         data() {
-            return {
+            return{
                 number: 10,
                 dynamicSlotName: 'title',
                 message: '',
