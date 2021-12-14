@@ -5,6 +5,9 @@
             <router-link to="/index" class="link" active-class="link--active" exact>
                 Index ->
             </router-link>
+            <router-link to="/pset" class="link" active-class="link--active" exact>
+                Pset ->
+            </router-link>
             <router-link to="/home" class="link" active-class="link--active" exact>
                 Home ->
             </router-link>

@@ -10,6 +10,7 @@ import Router from "vue-router";
 
 // 動的import
 const IndexApp = () => import(/* webpackChunkName: "Index" */ './views/IndexApp.vue');
+const Pset = () => import(/* webpackChunkName: "Pset" */ './views/Pset.vue');
 const Home = () => import(/* webpackChunkName: "Home" */ './views/home/Home.vue');
 const HeaderHome = () => import(/* webpackChunkName: "HeaderHome" */ './views/home/HeaderHome.vue');
 const Users = () => import(/* webpackChunkName: "Users" */'./views/users/Users.vue');
@@ -23,6 +24,7 @@ export default new Router({
     mode: "history",
     routes: [
         { path: "/index", component: IndexApp },
+        { path: "/pset", component: Pset },
         {
             path: "/home", components: {
                 default: Home,
