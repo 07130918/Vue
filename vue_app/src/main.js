@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import App from './App.vue';
-import LikeNumber from './components/LikeNumber.vue';
+import DataFlow from './components/DataFlow.vue';
 import router from './router';
 import store from './store'
 
 Vue.config.productionTip = false;
-Vue.component('LikeNumber', LikeNumber);
+Vue.component('DataFlow', DataFlow);
 // カスタムディレクティブのグローバル登録
 // Vue.directive("border", {
     // bind(el, binding, vnode) {

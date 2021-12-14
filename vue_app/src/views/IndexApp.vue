@@ -15,8 +15,8 @@
         </SlotPractice>
         <!-- このように親から子に渡す値を定義する, 属性として渡してあげる -->
         <!-- カスタムイベント名はケバブケースで -->
-        <LikeNumber :totalNumber="number" @my-click="incrementNumber" @my-popup="popup"></LikeNumber>
-        <LikeNumber v-bind:total-number="number" v-on:my-click="incrementNumber" @my-popup="popup"></LikeNumber>
+        <DataFlow :totalNumber="number" @my-click="incrementNumber" @my-popup="popup"></DataFlow>
+        <DataFlow v-bind:total-number="number" v-on:my-click="incrementNumber" @my-popup="popup"></DataFlow>
         <KeepAlive></KeepAlive>
         <FilterPractice></FilterPractice>
         <Form></Form>
