@@ -44,8 +44,8 @@ export default {
                 location.reload();
             }
         },
-        reflectValue: function(event) {
-            this.message2 = event;
+        reflectValue: function(value) {
+            this.message2 = value;
         }
     },
 }
