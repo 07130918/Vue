@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input type="text" :value="value" @change="onChange">
+        <input type="text" :value="value" @change="onChange" placeholder="値保持">
         <h3>{{ value }}</h3>
     </div>
 </template>
