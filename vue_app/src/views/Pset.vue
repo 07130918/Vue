@@ -11,7 +11,7 @@
         <h1>Pset2</h1>
         <input type="text" v-model="message">
         <h3>{{ message }}</h3>
-        <InputChild :value="message2" @input="message2 = $event"></InputChild>
+        <InputChild :value="message2" @input-completion="reflectValue"></InputChild>
     </div>
 </template>
 
@@ -44,6 +44,9 @@ export default {
                 location.reload();
             }
         },
+        reflectValue: function(event) {
+            this.message2 = event;
+        }
     },
 }
 </script>

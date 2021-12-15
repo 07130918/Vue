@@ -15,7 +15,8 @@ export default {
     },
     methods: {
         onChange: function(event) {
-            this.$emit('input', event.target.value)
+            console.log(event);
+            this.$emit('input-completion', event.target.value);
         },
     }
 }
