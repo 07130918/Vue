@@ -1,3 +1,4 @@
+<!-- 子コンポーネントは全てpsets配下にある-->
 <template>
     <div>
         <h1>Pset1</h1>
@@ -8,25 +9,28 @@
         </button>
         <hr>
         <h1>Pset2</h1>
-        <!-- v-forを回すときはkey属性を忘れずに -->
         <input type="text" v-model="message">
         <h3>{{ message }}</h3>
+        <InputChild :value="message2" @input="message2 = $event"></InputChild>
     </div>
 </template>
 
 <script>
+import InputChild from '../components/psets/Pset2InputChild.vue'
+
 export default {
     data() {
         return {
             message: '',
+            message2: '',
             xPosition: null,
             yPosition: null,
             ensureMsg: 'ページをリロードしますか?',
         }
     },
-    // components: {
-
-    // },
+    components: {
+        InputChild,
+    },
     methods: {
         // v-onで実行される関数は自動で$eventが渡される(DOMイベントを参照したい場合は仮引数eventで受けてあげる)
         displayMousePosition: function(event) {
