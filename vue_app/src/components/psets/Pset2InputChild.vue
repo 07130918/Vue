@@ -10,12 +10,12 @@ export default {
     props: {
         value: {
             type: String,
-            required: true,
+            required: false,
         }
     },
     methods: {
         onChange: function(event) {
-            console.log(event);
+            console.log("onChange() was called", event);
             this.$emit('input-completion', event.target.value);
         },
     }

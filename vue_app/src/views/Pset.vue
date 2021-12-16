@@ -9,9 +9,26 @@
         </button>
         <hr>
         <h1>Pset2</h1>
-        <input type="text" v-model="message">
+        <input type="text" v-model="message" placeholder="普通のv-model">
         <h3>{{ message }}</h3>
-        <InputChild :value="message2" @input-completion="reflectValue"></InputChild>
+        <button type="submit" @click="addTag">Tag追加</button>
+        <button type="submit" @click="tags.shift()">先頭Tag削除</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tag Name</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody v-for="tag in tags" :key="tag.num">
+                <tr>
+                    <td>{{tag.num}}. </td>
+                    <td>
+                        <InputChild :value="tag.inputVal" @input-completion="reflectValue(tag, $event)"></InputChild>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 
@@ -22,10 +39,10 @@ export default {
     data() {
         return {
             message: '',
-            message2: '',
             xPosition: null,
             yPosition: null,
             ensureMsg: 'ページをリロードしますか?',
+            tags: [{num: 1, inputVal: ''}],
         }
     },
     components: {
@@ -44,9 +61,16 @@ export default {
                 location.reload();
             }
         },
-        reflectValue: function(value) {
-            this.message2 = value;
-        }
+        addTag: function() {
+            console.log("addTag() was called", this.tags);
+            // 削除されて再度追加するとバグる
+            // インプットタイプ分けしたい
+            this.tags.push({num: this.tags.length + 1, inputVal: ''});
+        },
+        reflectValue: function(tag, event) {
+            console.log("reflectValue() was called", tag);
+            tag.inputVal = event;
+        },
     },
 }
 </script>
