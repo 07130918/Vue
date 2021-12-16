@@ -57,6 +57,9 @@ export default {
     components: {
         InputChild,
     },
+    created: function() {
+        this.tags.push({num: 1, inputVal: ''});
+    },
     methods: {
         // v-onで実行される関数は自動で$eventが渡される(DOMイベントを参照したい場合は仮引数eventで受けてあげる)
         displayMousePosition: function(event) {
