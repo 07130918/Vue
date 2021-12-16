@@ -42,7 +42,7 @@ export default {
             xPosition: null,
             yPosition: null,
             ensureMsg: 'ページをリロードしますか?',
-            tags: [{num: 1, inputVal: ''}],
+            tags: [],
         }
     },
     components: {
