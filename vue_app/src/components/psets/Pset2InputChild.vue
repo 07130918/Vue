@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input type="text" :value="value" @change="onChange" placeholder="値保持">
+        <input type="text" :value="value" @[nativeEventType]="onFire" placeholder="値保持">
         <h3>{{ value }}</h3>
     </div>
 </template>
@@ -11,11 +11,16 @@ export default {
         value: {
             type: String,
             required: false,
+        },
+        nativeEventType: {
+            type: String,
+            required: false,
+            default: 'input',
         }
     },
     methods: {
-        onChange: function(event) {
-            console.log("onChange() was called", event);
+        onFire: function(event) {
+            console.log("onFire() was called", event);
             this.$emit('input-completion', event.target.value);
         },
     }
