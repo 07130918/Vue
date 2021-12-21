@@ -13,6 +13,8 @@
             prop: 'checked',
             event: 'change'
         },
-        props: { checked: Boolean }
+        props: {
+            checked: Boolean
+        }
     }
 </script>
