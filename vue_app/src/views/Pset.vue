@@ -16,10 +16,14 @@
         <button type="submit" @click="tags.shift()">先頭Tag削除</button>
 
         <h4>v-onイベントの選択</h4>
-        <input type="radio" id="event-type-change" value="change" v-model="eventType">
-        <label for="event-type-change">@change</label>
-        <input type="radio" id="event-type-input" value="input" v-model="eventType">
-        <label for="event-type-input">@input</label>
+        <label for="event-type-change">
+            <input type="radio" id="event-type-change" value="change" v-model="eventType">
+            @change
+        </label>
+        <label for="event-type-input">
+            <input type="radio" id="event-type-input" value="input" v-model="eventType">
+            @input
+        </label>
 
         <table>
             <thead>
