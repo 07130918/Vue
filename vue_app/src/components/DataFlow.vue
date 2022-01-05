@@ -28,7 +28,7 @@
         },
         methods: {
             increment() {
-                // 第1引数に任意の命名, (第2引数にデータ操作)
+                // 第1引数に任意の命名, (第2引数にオブジェクト)
                 // $emitはカスタムイベントを作る
                 this.$emit("my-click", this.totalNumber + 1);
             },
