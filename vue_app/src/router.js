@@ -18,6 +18,7 @@ const HeaderUsers = () => import(/* webpackChunkName: "HeaderUsers" */ './views/
 const UsersProfile = () => import(/* webpackChunkName: "UsersProfile" */ './views/users/UsersProfile.vue');
 const UsersPosts = () => import(/* webpackChunkName: "UsersPosts" */ './views/users/UsersPosts.vue');
 
+// useはプラグイン導入キーワード:
 Vue.use(Router);
 
 export default new Router({
