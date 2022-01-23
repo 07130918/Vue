@@ -8,7 +8,7 @@ import Router from "vue-router";
 // import HeaderUsers from './views/HeaderUsers.vue'
 // import HeaderHome from './views/HeaderHome.vue'
 
-// 動的import
+// 動的import(遅延ローディング, webpackChunkNameでネットワークを見たときの.jsファイル名を明示)
 const IndexApp = () => import(/* webpackChunkName: "Index" */ './views/IndexApp.vue');
 const Pset = () => import(/* webpackChunkName: "Pset" */ './views/Pset.vue');
 const Home = () => import(/* webpackChunkName: "Home" */ './views/home/Home.vue');
