@@ -17,6 +17,11 @@
         <!-- カスタムイベント名はケバブケースで -->
         <DataFlow :totalNumber="number" @my-click="incrementNumber" @my-popup="popup"></DataFlow>
         <DataFlow v-bind:total-number="number" v-on:my-click="incrementNumber" @my-popup="popup"></DataFlow>
+        <RefsTraining ref="refsTraining"></RefsTraining>
+        <div>
+            <button @click="refsFruits">refer child component</button>
+            <div>{{ childFruits }}</div>
+        </div>
         <KeepAlive></KeepAlive>
         <FilterPractice></FilterPractice>
         <Form></Form>
@@ -25,10 +30,11 @@
 </template>
 
 <script>
-import SlotPractice from '../components/SlotPractice.vue'
-import KeepAlive from '../components/KeepAlive.vue'
 import FilterPractice from '../components/FilterPractice.vue'
 import Form from '../components/Form.vue'
+import KeepAlive from '../components/KeepAlive.vue'
+import RefsTraining from '../components/RefsTraining.vue'
+import SlotPractice from '../components/SlotPractice.vue'
 import TransitionPractice from '../components/TransitionPractice.vue'
 
     export default {
@@ -37,15 +43,17 @@ import TransitionPractice from '../components/TransitionPractice.vue'
                 number: 10,
                 dynamicSlotName: 'title',
                 message: '',
+                childFruits: null,
             }
         },
         // ローカル登録
         components: {
             // SlotPractice: SlotPractice 短縮できる
-            SlotPractice,
-            KeepAlive,
-            FilterPractice,
             Form,
+            FilterPractice,
+            KeepAlive,
+            RefsTraining,
+            SlotPractice,
             TransitionPractice,
         },
         methods: {
@@ -56,7 +64,10 @@ import TransitionPractice from '../components/TransitionPractice.vue'
             popup(value) {
                 this.message = value;
                 alert(this.message);
-            }
+            },
+            refsFruits() {
+                this.childFruits = this.$refs.refsTraining.fruits;
+            },
         }
     }
 </script>
